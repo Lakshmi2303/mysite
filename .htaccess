@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteRule ^(patients)$ patients.php
+RewriteRule ^(sponsers)$ sponsers.php
+RewriteRule ^(testimonials)$ testimonials.php
+RewriteRule ^(contact-us)$ contact-us.php
+RewriteRule ^([a-zA-Z0-9-/]+)$ content.php?url=$1
+
+<IfModule mod_headers.c>
+    # WEEK
+    <FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+
+    # WEEK
+    <FilesMatch "\.(js|css|swf)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+</IfModule>
+
